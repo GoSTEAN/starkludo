@@ -6,6 +6,11 @@ jobs:
   
       steps:
       - uses: actions/checkout@v2
+      - name: Clear npm cache
+        run: npm cache clean --force
+      
+      - name: Update npm
+        run: npm install -g npm@latest
       # installing Node
       - name: Use Node.js 18.x
         uses: actions/setup-node@v1
